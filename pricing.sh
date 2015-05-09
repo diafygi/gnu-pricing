@@ -13,7 +13,7 @@ for var in "$@"
 do
     if [ "$var" = "--pricing" ]
     then
-        cat "$BASEDIR/doc/$THISCMD.pricing"
+        cat "$BASEDIR/doc/$THISCMD.pricing.txt"
         exit 0
     fi
 done
