@@ -4,6 +4,12 @@
 pushd `dirname $0` > /dev/null
 THISDIR=`pwd`
 popd > /dev/null
+
+#remove the pricing directory from the path
+#(that way, the only commands that can't be priced are dirname, echo, and sed)
+PATH=`echo $PATH | sed "s@$THISDIR:@@"`
+
+#set the variables needed for command and path shortcuts
 THISCMD=`basename "$0"`
 BASEDIR=`dirname "$THISDIR"`
 
@@ -23,27 +29,26 @@ do
     if [ "$var" = "--pricing" ]
     then
 
-        #calculate the cost owed
-        USECOST=$(( $USECOUNT * 15 / 10 ))
-        if [ "${#USECOST}" = "1" ]
-        then
-            USECOST="0$USECOST"
-        fi
+        #get the overall usage
+        OVERALLTABLE=`$THISDIR/gnu-pricing | column -t -s IFS=$'\n'`
 
         #print the pricing help text
         echo "\
-Welcome to GNU Pricing for $THISCMD!
+=======================
+Welcome to GNU Pricing!
+=======================
 
-This command now costs \$0.015 per use.
-You've used this command $USECOUNT so far.
-Please pay \$${USECOST::-2}.${USECOST:${#num}-2} at https://donate.fsf.org/
+Using many GNU tools now cost \$0.01 per use.
+
+This command ($THISCMD) has been used $USECOUNT times so far.
+
+$OVERALLTABLE
+
+Please pay the total cost at https://donate.fsf.org/
 "
         exit 0
     fi
 done
-
-#remove the pricing directory from the path
-PATH=`echo $PATH | sed "s@$THISDIR:@@"`
 
 #increment usage
 NEWCOUNT=$(( $USECOUNT + 1 ))

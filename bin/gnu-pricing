@@ -1,0 +1,52 @@
+#!/bin/bash
+
+#get this script's directory and command name
+pushd `dirname $0` > /dev/null
+THISDIR=`pwd`
+popd > /dev/null
+
+#remove the pricing directory from the path
+#(that way, the only commands that can't be priced are dirname, echo, and sed)
+PATH=`echo $PATH | sed "s@$THISDIR:@@"`
+
+#get a list of commands from the usage history
+mkdir -p "$HOME/.gnu-pricing/"
+TOTALCOUNT="0"
+USEDCMDS=`ls -1 "$HOME/.gnu-pricing/" | sed 's@.usage$@@'`
+
+#print header
+echo -e "Overall GNU command usage"
+echo -e ""
+echo -e "command\tusage\tcost"
+echo -e "-------\t-----\t----"
+
+#get the usage count for each command
+for cmd in $USEDCMDS
+do
+    #read the usage count for this command
+    THISCOUNT=`cat "$HOME/.gnu-pricing/$cmd.usage"`
+
+    #calculate the cost for this command
+    USECOST=$(( $THISCOUNT * 100 / 100 ))
+    if [ "${#USECOST}" = "1" ]
+    then
+        USECOST="0$USECOST"
+    fi
+
+    #print the total usage and cost
+    echo -e "$cmd\t$THISCOUNT\t\$${USECOST::-2}.${USECOST:${#num}-2}"
+
+    #add the usage for this command to the total usage
+    TOTALCOUNT=$(( $TOTALCOUNT + $THISCOUNT ))
+done
+
+#calculate the total cost
+TOTALCOST=$(( $TOTALCOUNT * 100 / 100 ))
+if [ "${#TOTALCOST}" = "1" ]
+then
+    TOTALCOST="0$TOTALCOST"
+fi
+
+echo -e "-------\t-----\t----"
+echo -e "Total\t$TOTALCOUNT\t\$${TOTALCOST::-2}.${TOTALCOST:${#num}-2}"
+

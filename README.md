@@ -33,10 +33,12 @@ gcc --pricing
 
 If you're a cheap bastard and don't want to pay for these excellent GNU commands
 that the FSF worked so very hard to make, you can remove the pricing options by
-removeing the `gnu-pricing/bin` directory from your path.
+removeing the `gnu-pricing/bin` directory from your path and deleting the
+`~/.gnu-pricing/` directory.
 
 ```sh
 PATH=`echo $PATH | sed "s@/path/to/gnu-pricing/bin:@@"`
+rm -r ~/.gnu-pricing
 ```
 
 ## What commands have pricing
@@ -44,6 +46,8 @@ PATH=`echo $PATH | sed "s@/path/to/gnu-pricing/bin:@@"`
 The following commands now cost money to use:
 
 * base64
+* basename
+* cat
 * cp
 * cut
 * date
@@ -60,6 +64,7 @@ The following commands now cost money to use:
 * ls
 * make
 * md5sum
+* mkdir
 * mv
 * nano
 * rm
