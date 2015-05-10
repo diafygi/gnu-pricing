@@ -26,7 +26,26 @@ for using GNU commands will also be printed. You can pay this usage fee at
 [https://donate.fsf.org/](https://donate.fsf.org/).
 
 ```sh
-gcc --pricing
+user@host:~$ gcc --pricing
+=======================
+Welcome to GNU Pricing!
+=======================
+
+Using many GNU tools now cost $0.01 per use.
+
+This command (gcc) has been used 2 times so far.
+
+Overall GNU command usage
+command	usage	cost
+-------	-----	----
+gcc     2       $.02
+ls      41      $.41
+md5sum  1       $.01
+uname   2       $.02
+-------	-----	----
+Total   46      $.46
+
+Please pay the total cost at https://donate.fsf.org/
 ```
 
 ## How to uninstall
