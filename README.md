@@ -52,7 +52,7 @@ Please pay the total cost at https://donate.fsf.org/
 
 If you're a cheap bastard and don't want to pay for these excellent GNU commands
 that the FSF worked so very hard to make, you can remove the pricing options by
-removeing the `gnu-pricing/bin` directory from your path and deleting the
+removing the `gnu-pricing/bin` directory from your path and deleting the
 `~/.gnu-pricing/` directory.
 
 ```sh
