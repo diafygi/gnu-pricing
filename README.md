@@ -1,6 +1,6 @@
 # GNU Pricing
 
-Announcement: https://diafygi.github.io/gnu-pricing/website/
+**Announcement: https://diafygi.github.io/gnu-pricing/website/**
 
 GNU programs are used billions of time every day all over the world. However,
 the intellectual property owners, the Free Software Foundation, don't make a
