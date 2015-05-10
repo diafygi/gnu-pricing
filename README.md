@@ -1,5 +1,7 @@
 # GNU Pricing
 
+Announcement: https://diafygi.github.io/gnu-pricing/website/
+
 GNU programs are used billions of time every day all over the world. However,
 the intellectual property owners, the Free Software Foundation, don't make a
 cent from it. What a raw deal! This project aims to fix that by monetizing many
