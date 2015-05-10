@@ -23,7 +23,7 @@ Once the `gnu-pricing/bin` directory is in your path, simply use GNU tools as
 normal. To see the pricing breakdown from the command line, add the `--pricing`
 to see the cost breakdown for using that command. A record of how much you owe
 for using GNU commands will also be printed. You can pay this usage fee at 
-[https://my.fsf.org/donate/](https://my.fsf.org/donate/).
+[https://donate.fsf.org/](https://donate.fsf.org/).
 
 ```sh
 gcc --pricing
@@ -43,119 +43,44 @@ PATH=`echo $PATH | sed "s@/path/to/gnu-pricing/bin:@@"`
 
 The following commands now cost money to use:
 
-* arch
 * base64
-* basename
-* cat
-* chcon
-* chgrp
-* chmod
-* chown
-* chroot
-* cksum
-* comm
 * cp
-* csplit
 * cut
 * date
 * dd
 * df
-* dir
-* dircolors
-* dirname
 * du
-* echo
 * emacs
-* env
-* expand
-* expr
-* factor
-* fmt
-* fold
 * gcc
 * gnupg
 * grep
-* groups
 * gzip
 * head
-* hostid
-* id
-* install
-* join
-* link
 * ln
-* logname
 * ls
 * make
 * md5sum
-* mkdir
-* mkfifo
-* mknod
-* mktemp
 * mv
 * nano
-* nice
-* nl
-* nohup
-* nproc
-* numfmt
-* octave
-* od
-* paste
-* pathchk
-* pinky
-* pr
-* printenv
-* printf
-* ptx
-* pwd
-* readlink
-* realpath
 * rm
 * rmdir
-* runcon
-* screen
-* seq
 * sha1sum
 * sha224sum
 * sha256sum
 * sha384sum
 * sha512sum
-* Shell utilities
-* shred
-* shuf
-* sleep
 * sort
-* split
-* stat
-* stdbuf
-* stty
-* sum
-* sync
-* tac
 * tail
 * tar
-* tee
-* test
 * time
-* timeout
 * touch
-* tr
-* truncate
-* tsort
-* tty
 * uname
-* unexpand
 * uniq
-* unlink
 * uptime
-* users
-* vdir
 * wc
 * wget
 * who
 * whoami
-* yes
 
 ## Disclaimer
 
