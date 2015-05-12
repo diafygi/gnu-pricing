@@ -34,7 +34,7 @@ do
     fi
 
     #print the total usage and cost
-    echo -e "$cmd\t$THISCOUNT\t\$${USECOST::-2}.${USECOST:${#num}-2}"
+    echo -e "$cmd\t$THISCOUNT\t\$${USECOST::${#USECOST}-2}.${USECOST:${#num}-2}"
 
     #add the usage for this command to the total usage
     TOTALCOUNT=$(( $TOTALCOUNT + $THISCOUNT ))
@@ -48,5 +48,4 @@ then
 fi
 
 echo -e "-------\t-----\t----"
-echo -e "Total\t$TOTALCOUNT\t\$${TOTALCOST::-2}.${TOTALCOST:${#num}-2}"
-
+echo -e "Total\t$TOTALCOUNT\t\$${TOTALCOST::${#TOTALCOST}-2}.${TOTALCOST:${#num}-2}"
