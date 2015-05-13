@@ -17,8 +17,8 @@ USEDCMDS=`ls -1 "$HOME/.gnu-pricing/" | sed 's@.usage$@@'`
 #print header
 echo -e "Overall GNU command usage"
 echo -e ""
-echo -e "command\tusage\tcost"
-echo -e "-------\t-----\t----"
+echo -e " command   usage   cost"
+echo -e "--------- ------- ------"
 
 #get the usage count for each command
 for cmd in $USEDCMDS
@@ -28,13 +28,9 @@ do
 
     #calculate the cost for this command
     USECOST=$(( $THISCOUNT * 100 / 100 ))
-    if [ "${#USECOST}" = "1" ]
-    then
-        USECOST="0$USECOST"
-    fi
 
     #print the total usage and cost
-    echo -e "$cmd\t$THISCOUNT\t\$${USECOST::-2}.${USECOST:${#num}-2}"
+    printf "%9s %7d $%d.%02d\n" "$cmd" $THISCOUNT $(echo "$USECOST / 100" | bc) $(echo "$USECOST % 100" | bc)
 
     #add the usage for this command to the total usage
     TOTALCOUNT=$(( $TOTALCOUNT + $THISCOUNT ))
@@ -42,11 +38,7 @@ done
 
 #calculate the total cost
 TOTALCOST=$(( $TOTALCOUNT * 100 / 100 ))
-if [ "${#TOTALCOST}" = "1" ]
-then
-    TOTALCOST="0$TOTALCOST"
-fi
 
-echo -e "-------\t-----\t----"
-echo -e "Total\t$TOTALCOUNT\t\$${TOTALCOST::-2}.${TOTALCOST:${#num}-2}"
+echo -e "--------- ------- ------"
+printf "%9s %7d $%d.%02d\n" Total $TOTALCOUNT $(echo "$TOTALCOST / 100" | bc) $(echo "$TOTALCOST % 100" | bc)
 
