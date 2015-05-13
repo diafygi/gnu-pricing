@@ -2,12 +2,13 @@
 
 #get this script's directory and command name
 pushd `dirname $0` > /dev/null
-THISDIR=`pwd`
+THISDIR=$PWD
 popd > /dev/null
 
 #remove the pricing directory from the path
 #(that way, the only commands that can't be priced are dirname, echo, and sed)
-PATH=`echo $PATH | sed "s@$THISDIR:@@"`
+PATH=${PATH//"$THISDIR:"/}
+PATH=${PATH//":$THISDIR"/}
 
 #set the variables needed for command and path shortcuts
 THISCMD=`basename "$0"`
