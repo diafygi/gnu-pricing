@@ -1,14 +1,17 @@
 #!/bin/bash
 
+#IMPORTANT: do not use any GNU tools until further notice (see below)
+
 #get this script's directory and command name
-pushd `dirname $0` > /dev/null
+pushd ${0%/*} > /dev/null
 THISDIR=$PWD
 popd > /dev/null
 
 #remove the pricing directory from the path
-#(that way, the only commands that can't be priced are dirname, echo, and sed)
 PATH=${PATH//"$THISDIR:"/}
 PATH=${PATH//":$THISDIR"/}
+
+#IMPORTANT: GNU tools may be used after this line with no financial penalty
 
 #set the variables needed for command and path shortcuts
 THISCMD=`basename "$0"`
