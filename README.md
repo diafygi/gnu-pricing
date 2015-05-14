@@ -3,7 +3,7 @@
 **Announcement: https://diafygi.github.io/gnu-pricing/website/**
 
 GNU programs are used billions of time every day all over the world. However,
-the intellectual property owners, the Free Software Foundation, don't make a
+the [<s>intellectual property</s>](https://www.gnu.org/philosophy/not-ipr.xhtml) copyright owners, the Free Software Foundation, don't make a
 cent from it. What a raw deal! This project aims to fix that by monetizing many
 popular command line tools that GNU maintains.
 
@@ -112,4 +112,3 @@ The following commands now cost money to use:
 
 This project is satire and was made during the
 [2015 Stupid Shit No One Needs & Terrible Ideas Hackathon](https://stupidhackathon.github.io/).
-
