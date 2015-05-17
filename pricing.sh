@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 #get this script's directory and command name
 pushd `dirname $0` > /dev/null
