@@ -23,7 +23,6 @@ else
 fi
 
 #print pricing if requested
-ARGS="$@"
 for var in "$@"
 do
     if [ "$var" = "--pricing" ]
@@ -55,5 +54,5 @@ NEWCOUNT=$(( $USECOUNT + 1 ))
 echo "$NEWCOUNT" > "$HOME/.gnu-pricing/$THISCMD.usage"
 
 #run the command as normal
-$THISCMD $ARGS
+$THISCMD "$@"
 
