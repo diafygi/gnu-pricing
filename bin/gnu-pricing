@@ -12,7 +12,7 @@ PATH=`echo $PATH | sed "s@$THISDIR:@@"`
 #get a list of commands from the usage history
 mkdir -p "$HOME/.gnu-pricing/"
 TOTALCOUNT="0"
-USEDCMDS=`ls -1 "$HOME/.gnu-pricing/" | sed 's@.usage$@@'`
+USEDCMDS=`ls -1 "$HOME/.gnu-pricing/" | grep -Eo '(.*).usage' | sed 's@.usage$@@'`
 
 #print header
 echo -e "Overall GNU command usage"
